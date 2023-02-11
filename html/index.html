@@ -6,13 +6,47 @@
     <title>Farmacia Health&Safe</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
     <script src='../js/bootstrap.bundle.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid"></div>
-    <h2>Inicio</h2>
+    <div class="container-fluid ps-md-0 mt-4">
+        <div class="row g-0">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image ms-5 ms-5"></div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container pt-5">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <h3 class="login-heading mb-4">Inicio de sesión</h3>
+                
+                                <!-- Sign In Form -->
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control user" id="floatingInput" placeholder="name@example.com">
+                                        <label for="floatingInput">Usuario</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control password" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Contraseña</label>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" id="bLog" type="submit">Iniciar sesión</button>
+                                        <div class="text-center">
+                                        <a class="small" href="#">Olvidaste tu contraseña?</a>
+                                        </div>
+                                    </div>
+                
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
