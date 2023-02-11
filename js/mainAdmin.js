@@ -1,5 +1,5 @@
 document.write(
-    '<nav class="navbar navbar-expand-lg bg-body-tertiary">' +
+    '<nav class="navbar navbar-expand-lg bg-body-tertiary ">' +
     '<div class="container-fluid">' +
     '<a class="navbar-brand" href="#"><img src="../assets/logo.png" width="120px" height="100px" alt=""></a>' +
     '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"' +
@@ -20,9 +20,5 @@ document.write(
     '</div>' +
     '</div>' +
     '</div>' +
-    '</nav>' +
-    '<div class="align-items-center">' +
-    '<img class="position-absolute top-50 start-50 translate-middle" width="800" height="800"' +
-    'src="../assets/logo.png" alt="">' +
-    '</div>'
+    '</nav>' 
 )
