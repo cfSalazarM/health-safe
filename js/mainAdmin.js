@@ -20,5 +20,9 @@ document.write(
     '</div>' +
     '</div>' +
     '</div>' +
-    '</nav>'
+    '</nav>' +
+    '<div class="align-items-center">' +
+    '<img class="position-absolute top-50 start-50 translate-middle" width="800" height="800"' +
+    'src="../assets/logo.png" alt="">' +
+    '</div>'
 )
