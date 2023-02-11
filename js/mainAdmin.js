@@ -8,8 +8,8 @@ document.write(
     '</button>' +
     '<div class="collapse navbar-collapse" id="navbarNavAltMarkup">' +
     '<div class="navbar-nav">' +
-    '<a class="nav-link active" aria-current="page" href="#">Home</a>' +
-    '<a class="nav-link" href="#">Mi Perfil</a>' +
+    '<a class="nav-link active" aria-current="page" href="../html/AdminHome.html">Home</a>' +
+    '<a class="nav-link" href="../html/AdminProfile.html">Mi Perfil</a>' +
     '<a class="nav-link" href="#">Admin Usuarios</a>' +
     '<a class="nav-link" href="#">Ver Medicamentos</a>' +
     '</div>' +
