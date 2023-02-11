@@ -1,87 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Administrador</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="../js/main.js"></script></head>
-
-
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/bootstrap.min.css'>
+    <script src='../js/bootstrap.bundle.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+</head>
 <body>
-  <form>
-   <div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+  <script src="../js/mainAdmin.js"></script>
+  <form class="ms-5">
+    <div class="mb-3 w-25">
+      <label class="form-label">Nombre y Apellido</label>
+      <input type="text" class="form-control border border-primary" id="nameAdmin">
+    </div>
+    <div class="mb-3 w-25">
+      <label class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control border border-primary" id="UsuAdmin" >
+    </div>
+    <div class="mb-3 w-25">
+      <label class="form-label">Número telefónico</label>
+      <input type="number" class="form-control border border-primary" id="CellAdmin">
+    </div>
+    <div class="mb-3 w-25 ">
+      <label class="form-label">Contraseña</label>
+      <input type="password" class="form-control border border-primary" id="passwordAdmin">
+    </div>
+    <button type="submit" class="btn btn-primary ">Editar</button>
+    <button type="button" class="ms-2 btn btn-success">Guardar</button>
   </form>
+  
 </body>
 </html>
