@@ -11,14 +11,14 @@ document.write(
     '<a class="nav-link active" aria-current="page" href="../html/AdminHome.html">Home</a>' +
     '<a class="nav-link" href="../html/AdminProfile.html">Mi Perfil</a>' +
     '<a class="nav-link" href="../html/AdminUsers.html">Admin Usuarios</a>' +
-    '<a class="nav-link" href="#">Ver Medicamentos</a>' +
+    '<a class="nav-link" href="../html/ReporteMedicamentos.html">Ver Medicamentos</a>' +
     '</div>' +
     '</div>' +
     '<div class="row align-items-center">' +
     '<div class="col">' +
-    '<a class="btn btn-primary" role="button" href=" ">Cerrar sesión</a>' +
+    '<a class="btn btn-primary" role="button" href="../html">Cerrar sesión</a>' +
     '</div>' +
     '</div>' +
     '</div>' +
-    '</nav>' 
+    '</nav>'
 )
