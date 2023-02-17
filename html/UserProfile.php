@@ -30,6 +30,7 @@
                 <form class="ms-5">
                   <div class="mb-3 w-100">
                     <label class="form-label">Nombre y Apellido</label>
+                    
                     <input type="text" class="form-control border border-primary" id="nameAdmin" disabled readonly>
                     <label class="form-label">Nombre de usuario</label>
                     <input type="text" class="form-control border border-primary" id="UsuAdmin" disabled readonly>

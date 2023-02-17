@@ -8,6 +8,7 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel='stylesheet' type='text/css' media='screen' href='../css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
 	<script src='../js/bootstrap.bundle.min.js'></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

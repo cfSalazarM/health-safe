@@ -1,44 +1,58 @@
 .bg-image {
-    background-image: url('../assets/logo.png');
-    width: 500px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
+	background-image: url('../assets/logo.png');
+	width: 500px;
+	height: 500px;
+	background-size: cover;
+	background-position: center;
 }
 
 .modal .modal-dialog {
 	max-width: 400px;
 }
-.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+
+.modal .modal-header,
+.modal .modal-body,
+.modal .modal-footer {
 	padding: 20px 30px;
 }
+
 .modal .modal-content {
 	border-radius: 3px;
 	font-size: 14px;
 }
+
 .modal .modal-footer {
 	background: #ecf0f1;
 	border-radius: 0 0 3px 3px;
 }
+
 .modal .modal-title {
 	display: inline-block;
 }
+
 .modal .form-control {
 	border-radius: 2px;
 	box-shadow: none;
 	border-color: #dddddd;
 }
+
 .modal textarea.form-control {
 	resize: vertical;
 }
+
 .modal .btn {
 	border-radius: 2px;
 	min-width: 100px;
-}	
+}
+
 .modal form label {
 	font-weight: normal;
-}	
+}
 
 .modal .form-group {
 	padding: 5px 0;
+}
+
+body {
+	background-color: #f8f9fa;
 }

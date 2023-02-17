@@ -4,10 +4,11 @@
 <head>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-	<title>Administrar Usuarios</title>
+	<title>Administrar Medicamentos</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel='stylesheet' type='text/css' media='screen' href='../css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
 	<script src='../js/bootstrap.bundle.min.js'></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -15,18 +16,18 @@
 </head>
 
 <body>
-	<script src="../js/mainAdmin.js"></script>
+	<script src="../js/mainUser.js"></script>
 	<div class="container-xl d-flex justify-content-center mt-5 pt-5 align-items-center">
 		<div class="table-responsive w-75">
 			<div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Administrar <b>Usuarios</b></h2>
+							<h2>Administrar <b>Medicamentos</b></h2>
 						</div>
 						<div class="col-sm-6">
 							<button class="btn btn-success" data-bs-target="#addUserModal"
-								data-bs-toggle="modal"><span>Añadir Usuario</span></button>
+								data-bs-toggle="modal"><span>Añadir Medicamentos</span></button>
 							<button data-bs-target="#deleteUsersModal" class="btn btn-danger"
 								data-bs-toggle="modal"><span>Eliminar</span></a>
 						</div>
@@ -35,11 +36,11 @@
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
+							<th>Código</th>
 							<th>Nombre</th>
-							<th>Nombre de usuario</th>
-							<th>Contraseña</th>
-							<th>Telefono</th>
-							<th>Acciones</th>
+							<th>Presentación</th>
+							<th>Fecha de Caducidad</th>
+							<th>Cantidad</th>
 						</tr>
 					</thead>
 				</table>
@@ -54,13 +55,13 @@
 		<div class="modal-content">
 			<form class="needs-validation" novalidate>
 				<div class="modal-header">
-					<h4 class="modal-title">Añadir Usuario</h4>
+					<h4 class="modal-title">Añadir Medicamento</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<label>Nombre</label>
-						<input type="text" class="form-control" id="name" id="validationCustom01" required>
+						<label>Código</label>
+						<input type="text" class="form-control" id="código" id="validationCustom01" required>
 						<div class="valid-feedback">
 							El dato está correcto!
 						</div>
@@ -69,16 +70,20 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Nombre de usuario</label>
-						<input type="text" class="form-control" id="nameUser" required>
+						<label>Nombre</label>
+						<input type="text" class="form-control" id="nombreMedicamento" required>
 					</div>
 					<div class="form-group">
-						<label>Telefono</label>
-						<input type="number" class="form-control" id="phone" required>
+						<label>Presentación</label>
+						<input type="text" class="form-control" id="Presentación" required>
 					</div>
 					<div class="form-group">
-						<label>Contraseña</label>
-						<input type="text" class="form-control" id="password" required>
+						<label>Fecha de Caducidad</label>
+						<input type="date" class="form-control" id="f-caducidad" required>
+					</div>
+					<div class="form-group">
+						<label>Cantidad</label>
+						<input type="number" class="form-control" id="Cantidad" required>
 					</div>
 				</div>
 				<div class="modal-footer">
