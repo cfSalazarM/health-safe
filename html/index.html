@@ -24,15 +24,23 @@
                                 <h3 class="login-heading mb-4">Inicio de sesión</h3>
                 
                                 <!-- Sign In Form -->
-                                <form>
+                                <form action="backend.php" method="post">
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control user" id="floatingInput" placeholder="name@example.com">
+                                        <input type="email" class="form-control user" id="floatingInput" placeholder="name@example.com" name="user">
                                         <label for="floatingInput">Usuario</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control password" id="floatingPassword" placeholder="Password">
+                                        <input type="password" class="form-control password" id="floatingPassword" placeholder="Password" name="password">
                                         <label for="floatingPassword">Contraseña</label>
                                     </div>
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="rol">
+                                          <option value="admin">Administrador</option>
+                                          <option value="user">Usuario</option>
+                                        </select>
+                                        <label for="floatingSelect">Seleccione su rol</label>
+                                    </div>
+                                    <br>
                                     <div class="d-grid">
                                         <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" id="bLog" type="submit">Iniciar sesión</button>
                                         <div class="text-center">
