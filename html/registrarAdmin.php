@@ -8,4 +8,6 @@
         
     $sql = "insert into users values ('$nombre','$user','$pass','$telefono','$rol')";
     $res = mysqli_query($conx, $sql);
+
+    header('Location: http://localhost/health_safe/html');
 ?>

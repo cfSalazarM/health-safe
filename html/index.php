@@ -53,9 +53,19 @@
                                             <a class="small" href="#">Olvidaste tu contraseña?</a>
                                         </div>
                                     </div>
-                                    <div class="text-center">
-                                        <a class="small" href="#" data-bs-target="#addUserModal" data-bs-toggle="modal" > Registrar Administrador</a>
-                                    </div>
+                                    <?php
+                                        $conx = mysqli_connect("localhost", "root", "", "health_safe");
+                                        $sql = "SELECT rol FROM users WHERE rol ='admin'";
+                                        $res = mysqli_query($conx, $sql);
+                                       
+                                        if (!($res->num_rows > 0 )) {
+
+                                            echo '<div class="text-center">';
+                                            echo '<a class="small" href="#" data-bs-target="#addUserModal" data-bs-toggle="modal" > Registrar Administrador</a></div>';
+                                        }    
+
+                                    ?>
+                                    
                                 </form>
                             </div>
                         </div>

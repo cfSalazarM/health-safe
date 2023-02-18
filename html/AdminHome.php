@@ -19,7 +19,6 @@
     <div class="container d-flex justify-content-center">
         <img src="../assets/logo.png" alt="">
     </div>
-    
 </body>
 
 </html>
