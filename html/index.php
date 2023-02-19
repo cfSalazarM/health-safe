@@ -26,7 +26,7 @@
                                 <h3 class="login-heading mb-4">Inicio de sesión</h3>
 
                                 <!-- Sign In Form -->
-                                <form action="backend.php" method="post">
+                                <form action="../services/authUser.php" method="post">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control user" id="floatingInput"
                                             placeholder="name@example.com" name="user">
@@ -79,7 +79,7 @@
 <div id="addUserModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form action="./registrarAdmin.php" method="post" class="needs-validation" novalidate>
+			<form action="../services/registerUser.php" method="post" class="needs-validation" novalidate>
 				<div class="modal-header">
 					<h4 class="modal-title">Registrar Administrador</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>

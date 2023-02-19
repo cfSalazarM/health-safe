@@ -27,7 +27,7 @@
                 <h3 class="login-heading mb-4 ms-5">Mi perfil</h3>
 
                 <!-- Sign In Form -->
-                <form class="ms-5">
+                <form class="ms-5" id="form-profile">
                   <div class="mb-3 w-100">
                     <?php
                       session_start();
@@ -44,13 +44,13 @@
                       while ($mostrar = mysqli_fetch_row($res)) {
                       ?>  
                       <label class="form-label">Nombre y Apellido</label>
-                      <input type="text" class="form-control border border-primary" id="nameAdmin" value="<?php echo $mostrar['0']?>">
+                      <input type="text" class="form-control border border-primary" id="nameAdmin" value="<?php echo $mostrar['0']?>" name="name_user">
                       <label class="form-label">Nombre de usuario</label>
-                      <input type="text" class="form-control border border-primary" id="UsuAdmin" value="<?php echo $mostrar['1']?>">
+                      <input type="text" class="form-control border border-primary" id="UsuAdmin" value="<?php echo $mostrar['1']?>" name="user">
                       <label class="form-label">Número telefónico</label>
-                      <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>">
+                      <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>" name="phone">
                       <label class="form-label">Contraseña</label>
-                      <input type="password" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>">
+                      <input type="password" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password">
                       <br>
                       <?php
                         }
@@ -67,6 +67,7 @@
       </div>
     </div>
   </div>
+  <script src="../js/editAdmin.js"></script>
 </body>
 
 </html>
