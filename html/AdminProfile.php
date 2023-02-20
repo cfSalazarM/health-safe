@@ -50,12 +50,11 @@
                       <label class="form-label">Número telefónico</label>
                       <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>" name="phone">
                       <label class="form-label">Contraseña</label>
-                      <input type="password" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password">
+                      <input type="password" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password" >
                       <br>
                       <?php
                         }
                       ?>
-                    
                     <button type="submit" class="btn btn-primary ">Editar</button>
                     <button type="button" class="ms-2 btn btn-success">Guardar</button>
                   </div>
