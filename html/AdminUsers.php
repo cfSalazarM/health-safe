@@ -41,7 +41,7 @@
 							<th>Acciones</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="tbody">
 						<?php
 							$conx = mysqli_connect("localhost", "root", "", "health_safe");
 
@@ -54,8 +54,10 @@
 								<td><?php echo $mostrar['1']?></td>	
 								<td><?php echo $mostrar['2']?></td>	
 								<td><?php echo $mostrar['3']?></td>
-								<td class="tEdit"><a href="#addUserModal" class="edit" data-bs-toggle="modal" id="aEditAero"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a></td>		
-								<td class="tDelete"><a href="#deleteUserModal" class="delete" data-bs-toggle="modal"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a></td>
+								<td class="tEdit">
+									<a href="#addUserModal" class="edit" data-bs-toggle="modal" id="<?php echo $mostrar['1']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
+									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
+								</td>		
 							</tr>
 							<?php
 								}
@@ -107,6 +109,48 @@
 			</div>
 		</div>
 	</div>
+	<!-- Add Modal HTML -->
+	<div id="editUserModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="needs-validation" id="form-addUser" novalidate>
+					<div class="modal-header">
+						<h4 class="modal-title">Editar Usuario</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input type="text" class="form-control" id="name" id="validationCustom01" name="nom" required>
+							<div class="valid-feedback">
+								El dato está correcto!
+							</div>
+							<div class="invalid-feedback">
+								Por favor ingrese su nombre
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Nombre de usuario</label>
+							<input type="text" class="form-control" id="user" name="user" required>
+						</div>
+						<div class="form-group">
+							<label>Telefono</label>
+							<input type="number" class="form-control" id="phone" name="tel" required>
+						</div>
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="text" class="form-control" id="password" name="password" required>
+						</div>
+						<input type="text" class="form-control visually-hidden" id="rol" name="rol" value="user">
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+						<input type="submit" class="btn btn-success" id="bAddUser" value="Editar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<!-- Delete Modal HTML -->
 	<div id="deleteUsersModal" class="modal fade">
 		<div class="modal-dialog">
@@ -128,6 +172,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div id="deleteUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -149,5 +194,6 @@
 		</div>
 	</div>
 	<script src="../js/addUser.js"></script>
+	<script src="../js/deleteUser.js"></script>
 </body>
 </html>
