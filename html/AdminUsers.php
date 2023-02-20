@@ -36,8 +36,8 @@
 						<tr>
 							<th>Nombre</th>
 							<th>Nombre de usuario</th>
-							<th>Contraseña</th>
 							<th>Telefono</th>
+							<th>Contraseña</th>
 							<th>Acciones</th>
 						</tr>
 					</thead>
@@ -176,7 +176,7 @@
 	<div id="deleteUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form action = "../services/deleteUser.php" method ="get">
 					<div class="modal-header">
 						<h4 class="modal-title">Eliminar Usuario</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
