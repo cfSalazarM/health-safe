@@ -29,17 +29,32 @@
                 <!-- Sign In Form -->
                 <form class="ms-5">
                   <div class="mb-3 w-100">
-                    <label class="form-label">Nombre y Apellido</label>
-                    
-                    <input type="text" class="form-control border border-primary" id="nameAdmin" disabled readonly>
+                    <?php
+                      session_start();
+                      $aux = $_SESSION['l_ok'];
+                      $user = $aux["user"];
+                      $password = $aux["password"];
+                      $rol = $aux["rol"];
+
+                      $conx = mysqli_connect("localhost", "root", "", "health_safe");
+
+                      $sql = "SELECT nom_usuario, user, phone, users.password FROM users WHERE users.user = '$user' AND users.password = '$password' and rol ='$rol'";
+                      $res = mysqli_query($conx, $sql);
+                      
+                      while ($mostrar = mysqli_fetch_row($res)) {
+                    ?>  
+                    <label class="form-label">Nombre y Apellido</label>                    
+                    <input type="text" class="form-control border border-primary" id="nameUser" value="<?php echo $mostrar['0']?>" name="name_user" disabled readonly>
                     <label class="form-label">Nombre de usuario</label>
-                    <input type="text" class="form-control border border-primary" id="UsuAdmin" disabled readonly>
+                    <input type="text" class="form-control border border-primary" id="User" value="<?php echo $mostrar['1']?>" name="user" disabled readonly>
                     <label class="form-label">Número telefónico</label>
-                    <input type="number" class="form-control border border-primary" id="CellAdmin" disabled readonly>
+                    <input type="number" class="form-control border border-primary" id="CellUser" value="<?php echo $mostrar['2']?>" name="phone" disabled readonly>
                     <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control border border-primary" id="passwordAdmin" disabled
-                      readonly>
+                    <input type="text" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
                     <br>
+                    <?php
+                      }
+                    ?>
                   </div>
                 </form>
               </div>

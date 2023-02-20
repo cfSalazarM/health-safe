@@ -37,6 +37,25 @@
 							<th>Cantidad</th>
 						</tr>
 					</thead>
+					<tbody>
+						<?php
+							$conx = mysqli_connect("localhost", "root", "", "health_safe");
+
+							$sql = "SELECT * from medicine";
+							$res = mysqli_query($conx, $sql);
+							while ($mostrar = mysqli_fetch_row($res)) {
+							?>	
+							<tr>
+								<td><?php echo $mostrar['0']?></td>
+								<td><?php echo $mostrar['1']?></td>	
+								<td><?php echo $mostrar['2']?></td>	
+								<td><?php echo $mostrar['3']?></td>
+								<td><?php echo $mostrar['4']?></td>
+							</tr>
+							<?php
+								}
+							?>
+					</tbody>
 				</table>
 			</div>
 		</div>

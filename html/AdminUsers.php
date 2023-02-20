@@ -36,8 +36,8 @@
 						<tr>
 							<th>Nombre</th>
 							<th>Nombre de usuario</th>
-							<th>Contraseña</th>
 							<th>Telefono</th>
+							<th>Contraseña</th>
 							<th>Acciones</th>
 						</tr>
 					</thead>
@@ -142,7 +142,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
-						<input type="submit" class="btn btn-danger" value="Eliminar">
+						<input type="submit" class="btn btn-danger" value="Eliminar" id="eliminar">
 					</div>
 				</form>
 			</div>
