@@ -56,7 +56,7 @@
 								<td><?php echo $mostrar['3']?></td>
 								<td class="tEdit">
 									<a href="#editUserModal" class="edit" data-bs-toggle="modal" data-bs-u="<?= $mostrar['1']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
-									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
+									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal" data-bs-u="<?= $mostrar['1']?>"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
 								</td>		
 							</tr>
 							<?php
@@ -109,7 +109,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- Add Modal HTML -->
+	<!-- Edit Modal HTML -->
 	<div id="editUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -155,7 +155,7 @@
 	<div id="deleteUsersModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form action="../services/deleteUser.php" method="post">
 					<div class="modal-header">
 						<h4 class="modal-title">Eliminar Usuarios</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -176,7 +176,7 @@
 	<div id="deleteUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action = "../services/deleteUser.php" method ="get">
+				<form action = "../services/deleteUser.php" method ="post">
 					<div class="modal-header">
 						<h4 class="modal-title">Eliminar Usuario</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -186,6 +186,7 @@
 						<p class="text-warning"><small>Esta acción no podra deshacerse.</small></p>
 					</div>
 					<div class="modal-footer">
+						<input type="text" class="visually-hidden" name="user" id="userDelete">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
 						<input type="submit" class="btn btn-danger" value="Eliminar">
 					</div>

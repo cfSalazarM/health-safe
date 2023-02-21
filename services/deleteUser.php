@@ -7,6 +7,6 @@
     if (!$res) {
         echo "No se ha Eliminado";
     } else{
-        header("../html/AdminUsers.php");
+        header('Location: http://localhost/health_safe/html/AdminUsers.php');
     }
 ?>

@@ -2,6 +2,7 @@ let user = document.getElementById('edit');
 let input = document.getElementById('userOld');
 
 let editModal = document.getElementById('editUserModal');
+let deleteModal = document.getElementById('deleteUserModal');
 
 editModal.addEventListener('shown.bs.modal', event => {
     let but = event.relatedTarget;
@@ -33,3 +34,11 @@ editModal.addEventListener('shown.bs.modal', event => {
 
     }).catch(err => console.log(err))
 });
+
+deleteModal.addEventListener('show.bs.modal', event => {
+    let but = event.relatedTarget
+    let user = but.getAttribute('data-bs-u');
+    console.log(user);
+    let inputUser = document.getElementById('userDelete');
+    inputUser.value = user;
+})
