@@ -1,9 +1,12 @@
 <?php
-    $name = $_POST['nom'];
+    $name = $_POST['name_user'];
     $user = $_POST['user'];
-    $phone = $_POST['tel'];
+    $phone = $_POST['phone'];
     $password = $_POST['password'];
-    $userOld = $_POST['userOld'];
+
+    session_start();
+    $aux = $_SESSION['l_ok'];
+    $userOld = $aux["user"];
 
     $conx = mysqli_connect("localhost", "root", "", "health_safe");
         
@@ -15,7 +18,12 @@
         echo json_encode("No se actualizo");
     }
     else {
+        $array = array(
+            "user" => $user,
+            "password" => $password,
+            "rol" => $aux["rol"]
+        );
+        $_SESSION['l_ok'] = $array;
         echo json_encode('Correcto');
     }
-    header('Location: http://localhost/health_safe/html/AdminUsers.php')
 ?>

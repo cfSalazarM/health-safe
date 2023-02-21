@@ -7,7 +7,7 @@ form.addEventListener('submit', function(e){
 
     console.log(data.get('name_user'));
 
-    fetch('../services/updateUser.php', {
+    fetch('../services/updateAdmin.php', {
         method: 'POST',
         body: data
     })

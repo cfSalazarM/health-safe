@@ -55,7 +55,7 @@
 								<td><?php echo $mostrar['2']?></td>	
 								<td><?php echo $mostrar['3']?></td>
 								<td class="tEdit">
-									<a href="#addUserModal" class="edit" data-bs-toggle="modal" id="<?php echo $mostrar['1']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
+									<a href="#editUserModal" class="edit" data-bs-toggle="modal" data-bs-u="<?= $mostrar['1']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
 									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
 								</td>		
 							</tr>
@@ -79,7 +79,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Nombre</label>
-							<input type="text" class="form-control" id="name" id="validationCustom01" name="nom" required>
+							<input type="text" class="form-control" id="nom" id="validationCustom01" name="nom" required>
 							<div class="valid-feedback">
 								El dato está correcto!
 							</div>
@@ -93,7 +93,7 @@
 						</div>
 						<div class="form-group">
 							<label>Telefono</label>
-							<input type="number" class="form-control" id="phone" name="tel" required>
+							<input type="number" class="form-control" id="tel" name="tel" required>
 						</div>
 						<div class="form-group">
 							<label>Contraseña</label>
@@ -113,7 +113,7 @@
 	<div id="editUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form class="needs-validation" id="form-addUser" novalidate>
+				<form class="needs-validation" id="form-editUser" method="post" action="../services/updateUser.php" enctype="multipart/form-data" novalidate>
 					<div class="modal-header">
 						<h4 class="modal-title">Editar Usuario</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -121,7 +121,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Nombre</label>
-							<input type="text" class="form-control" id="name" id="validationCustom01" name="nom" required>
+							<input type="text" class="form-control" id="nomEdit" id="validationCustom01" name="nom" required>
 							<div class="valid-feedback">
 								El dato está correcto!
 							</div>
@@ -131,17 +131,17 @@
 						</div>
 						<div class="form-group">
 							<label>Nombre de usuario</label>
-							<input type="text" class="form-control" id="user" name="user" required>
+							<input type="text" class="form-control" id="userEdit" name="user" required>
 						</div>
 						<div class="form-group">
 							<label>Telefono</label>
-							<input type="number" class="form-control" id="phone" name="tel" required>
+							<input type="number" class="form-control" id="telEdit" name="tel" required>
 						</div>
 						<div class="form-group">
 							<label>Contraseña</label>
-							<input type="text" class="form-control" id="password" name="password" required>
+							<input type="text" class="form-control" id="passwordEdit" name="password" required>
 						</div>
-						<input type="text" class="form-control visually-hidden" id="rol" name="rol" value="user">
+						<input type="text" class="form-control visually-hidden" id="userOld" name="userOld" required>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
@@ -194,6 +194,6 @@
 		</div>
 	</div>
 	<script src="../js/addUser.js"></script>
-	<script src="../js/deleteUser.js"></script>
+	<script src="../js/editUser.js"></script>
 </body>
 </html>
