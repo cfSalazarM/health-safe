@@ -82,3 +82,20 @@ table.table td a {
 	outline: none !important;
 	padding: 0 !important;
 }
+
+
+div#is-relative{
+  position: relative;
+}
+
+/* El icono debe ser "position: absolute"
+ * Ademas le damos un "display: block" y lo posicionamos */
+#icon{
+  position: absolute;
+  display: block;
+  bottom: .5rem;
+  right: 1rem;
+  
+  user-select: none;
+  cursor: pointer;
+}
