@@ -45,22 +45,22 @@
                       while ($mostrar = mysqli_fetch_row($res)) {
                       ?>  
                       <label class="form-label">Nombre y Apellido</label>
-                      <input type="text" class="form-control border border-primary" id="nameAdmin" value="<?php echo $mostrar['0']?>" name="name_user">
+                      <input type="text" class="form-control border border-primary" id="nameAdmin" value="<?php echo $mostrar['0']?>" name="name_user" disabled readonly>
                       <label class="form-label">Nombre de usuario</label>
-                      <input type="text" class="form-control border border-primary" id="UsuAdmin" value="<?php echo $mostrar['1']?>" name="user">
+                      <input type="text" class="form-control border border-primary" id="UsuAdmin" value="<?php echo $mostrar['1']?>" name="user" disabled readonly>
                       <label class="form-label">Número telefónico</label>
-                      <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>" name="phone">
+                      <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>" name="phone" disabled readonly>
                       <label class="form-label">Contraseña</label>
                       <div id="is-relative">
-                        <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password">
+                        <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
                         <span id="icon"><i class="fa-solid fa-eye"></i></span>
                       </div>
                       <br>
                       <?php
                         }
                       ?>
-                    <button type="submit" class="btn btn-primary ">Editar</button>
-                    <button type="button" class="ms-2 btn btn-success">Guardar</button>
+                    <button type="button" class="btn btn-success" id="bEdit">Editar</button>
+                    <button type="submit" class="ms-2 btn btn-primary visually-hidden" id="bSave">Guardar</button>
                   </div>
                 </form>
               </div>
@@ -72,6 +72,7 @@
   </div>
   <script src="../js/editAdmin.js"></script>
   <script src="../js/viewPassword.js"></script>
+  <script src="../js/changeInput.js"></script>
 </body>
 
 </html>
