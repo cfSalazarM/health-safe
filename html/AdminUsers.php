@@ -12,6 +12,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>	
 </head>
 <body id="body">
 	<script src="../js/mainAdmin.js"></script>
@@ -22,6 +23,25 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<h2>Administrar <b>Usuarios</b></h2>
+							<?php
+							session_start();
+							if (isset($_SESSION['msj'])) { 
+								$resp =$_SESSION['msj']; 
+								$type = $_SESSION['typeMsj']; 
+								$hresp = $_SESSION['hmsj'] ?>
+								<script>
+									Swal.fire(
+										'<?php echo $hresp ?>',
+										'<?php echo $resp ?>',
+										'<?php echo $type ?>'
+									)
+								</script>
+							<?php
+								unset($_SESSION['msj']);
+								unset($_SESSION['typeMsj']);
+								unset($_SESSION['hmsj']);		
+							}
+							?>
 						</div>
 						<div class="col-sm-6">
 							<button class="btn btn-success" data-bs-target="#addUserModal"
@@ -71,7 +91,7 @@
 	<div id="addUserModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form class="needs-validation" id="form-addUser" novalidate>
+				<form class="needs-validation" id="form-addUser" action="../services/registerUser.php" method="post" novalidate>
 					<div class="modal-header">
 						<h4 class="modal-title">Añadir Usuario</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -194,7 +214,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="../js/addUser.js"></script>
-	<script src="../js/editUser.js"></script>
+	<script src="../js/editDeleteUser.js"></script>
 </body>
 </html>

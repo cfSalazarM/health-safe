@@ -12,6 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a535fe116a.js" crossorigin="anonymous"></script>  
 </head>
 
 <body>
@@ -50,7 +51,10 @@
                     <label class="form-label">Número telefónico</label>
                     <input type="number" class="form-control border border-primary" id="CellUser" value="<?php echo $mostrar['2']?>" name="phone" disabled readonly>
                     <label class="form-label">Contraseña</label>
-                    <input type="text" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
+                    <div id="is-relative">
+                      <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
+                      <span id="icon"><i class="fa-solid fa-eye"></i></span>
+                    </div>
                     <br>
                     <?php
                       }
@@ -64,6 +68,7 @@
       </div>
     </div>
   </div>
+  <script src="../js/viewPassword.js"></script>
 </body>
 
 </html>
