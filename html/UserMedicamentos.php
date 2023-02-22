@@ -26,9 +26,9 @@
 							<h2>Administrar <b>Medicamentos</b></h2>
 						</div>
 						<div class="col-sm-6">
-							<button class="btn btn-success" data-bs-target="#addUserModal"
+							<button class="btn btn-success" data-bs-target="#addMedicineModal"
 								data-bs-toggle="modal"><span>Añadir Medicamentos</span></button>
-							<button data-bs-target="#deleteUsersModal" class="btn btn-danger"
+							<button data-bs-target="#deleteMedicinesModal" class="btn btn-danger"
 								data-bs-toggle="modal"><span>Eliminar</span></a>
 						</div>
 					</div>
@@ -43,17 +43,38 @@
 							<th>Cantidad</th>
 						</tr>
 					</thead>
+					<tbody id="tbody">
+					<?php
+							$conx = mysqli_connect("localhost", "root", "", "health_safe");
+
+							$sql = "SELECT code, medicine.name, presentation, due_date, amount FROM medicine";
+							$res = mysqli_query($conx, $sql);
+							while ($mostrar = mysqli_fetch_row($res)) {
+							?>	
+							<tr>
+								<td><?php echo $mostrar['0']?></td>
+								<td><?php echo $mostrar['1']?></td>	
+								<td><?php echo $mostrar['2']?></td>	
+								<td><?php echo $mostrar['3']?></td>
+								<td><?php echo $mostrar['4']?></td>
+								<td class="tEdit">
+									<a href="#editUserModal" class="edit" data-bs-toggle="modal" data-bs-u="<?= $mostrar['0']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
+									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal" data-bs-u="<?= $mostrar['0']?>"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
+								</td>		
+							</tr>
+							<?php
+								}
+							?>
+					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
-</body>
-
-<!-- Add Modal HTML -->
-<div id="addUserModal" class="modal fade">
+	<!-- Add Modal HTML -->
+<div id="addMedicineModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form class="needs-validation" novalidate>
+			<form class="needs-validation" id="form-addMedicine" method="post" action="../services/registerMedicine.php" novalidate>
 				<div class="modal-header">
 					<h4 class="modal-title">Añadir Medicamento</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -61,7 +82,7 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Código</label>
-						<input type="text" class="form-control" id="código" id="validationCustom01" required>
+						<input type="text" class="form-control" id="código" id="validationCustom01" name="code" required>
 						<div class="valid-feedback">
 							El dato está correcto!
 						</div>
@@ -71,31 +92,73 @@
 					</div>
 					<div class="form-group">
 						<label>Nombre</label>
-						<input type="text" class="form-control" id="nombreMedicamento" required>
+						<input type="text" class="form-control" id="nombreMedicamento" name="name" required>
 					</div>
 					<div class="form-group">
 						<label>Presentación</label>
-						<input type="text" class="form-control" id="Presentación" required>
+						<input type="text" class="form-control" id="Presentación" name="presentation" required>
 					</div>
 					<div class="form-group">
 						<label>Fecha de Caducidad</label>
-						<input type="date" class="form-control" id="f-caducidad" required>
+						<input type="date" class="form-control" id="f-caducidad" name="due_date" required>
 					</div>
 					<div class="form-group">
 						<label>Cantidad</label>
-						<input type="number" class="form-control" id="Cantidad" required>
+						<input type="number" class="form-control" id="Cantidad" name="amount" required>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
-					<input type="submit" class="btn btn-success" id="bAddUser" value="Añadir">
+					<input type="submit" class="btn btn-success" id="bAddMedicine" value="Añadir">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
+<!-- Edit Modal HTML -->
+<div id="editMedicineModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="needs-validation" id="form-editUser" method="post" action="../services/updateUser.php" enctype="multipart/form-data" novalidate>
+					<div class="modal-header">
+						<h4 class="modal-title">Editar Medicamento</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input type="text" class="form-control" id="nomEdit" id="validationCustom01" name="nom" required>
+							<div class="valid-feedback">
+								El dato está correcto!
+							</div>
+							<div class="invalid-feedback">
+								Por favor ingrese su nombre
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Nombre de usuario</label>
+							<input type="text" class="form-control" id="userEdit" name="user" required>
+						</div>
+						<div class="form-group">
+							<label>Telefono</label>
+							<input type="number" class="form-control" id="telEdit" name="tel" required>
+						</div>
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="text" class="form-control" id="passwordEdit" name="password" required>
+						</div>
+						<input type="text" class="form-control visually-hidden" id="userOld" name="userOld" required>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+						<input type="submit" class="btn btn-success" id="bAddUser" value="Editar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 <!-- Delete Modal HTML -->
-<div id="deleteUsersModal" class="modal fade">
+<div id="deleteMedicinesModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form>
@@ -115,5 +178,5 @@
 		</div>
 	</div>
 </div>
-
+</body>
 </html>

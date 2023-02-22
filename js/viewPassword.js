@@ -1,6 +1,6 @@
 let eye = document.getElementsByClassName('fa-eye');
 let ban = eye[0].classList.contains('fa-eye-slash');
-let input = document.getElementById('passwordAdmin');
+let input = document.getElementById('password');
 
 console.log(ban);
 

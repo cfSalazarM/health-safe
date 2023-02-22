@@ -52,7 +52,7 @@
                       <input type="number" class="form-control border border-primary" id="CellAdmin" value="<?php echo $mostrar['2']?>" name="phone">
                       <label class="form-label">Contraseña</label>
                       <div id="is-relative">
-                        <input type="password" class="form-control border border-primary" id="passwordAdmin" value="<?php echo $mostrar['3']?>" name="password">
+                        <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password">
                         <span id="icon"><i class="fa-solid fa-eye"></i></span>
                       </div>
                       <br>
