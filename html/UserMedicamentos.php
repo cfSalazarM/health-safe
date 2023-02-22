@@ -105,7 +105,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Esta seguro de que desea eliminar todos los registros?</p>
-					<p class="text-warning"><small>Esta acción no podra deshacerse.</small></p>
+					<p class="text-warning"><small>Esta acción no podrá deshacerse.</small></p>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">

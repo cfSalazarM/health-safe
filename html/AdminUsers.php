@@ -36,7 +36,7 @@
 						<tr>
 							<th>Nombre</th>
 							<th>Nombre de usuario</th>
-							<th>Telefono</th>
+							<th>Teléfono</th>
 							<th>Contraseña</th>
 							<th>Acciones</th>
 						</tr>
@@ -92,7 +92,7 @@
 							<input type="text" class="form-control" id="user" name="user" required>
 						</div>
 						<div class="form-group">
-							<label>Telefono</label>
+							<label>Teléfono</label>
 							<input type="number" class="form-control" id="tel" name="tel" required>
 						</div>
 						<div class="form-group">
@@ -134,7 +134,7 @@
 							<input type="text" class="form-control" id="userEdit" name="user" required>
 						</div>
 						<div class="form-group">
-							<label>Telefono</label>
+							<label>Teléfono</label>
 							<input type="number" class="form-control" id="telEdit" name="tel" required>
 						</div>
 						<div class="form-group">
@@ -162,7 +162,7 @@
 					</div>
 					<div class="modal-body">
 						<p>Esta seguro de que desea eliminar todos los registros?</p>
-						<p class="text-warning"><small>Esta acción no podra deshacerse.</small></p>
+						<p class="text-warning"><small>Esta acción no podrá deshacerse.</small></p>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
@@ -183,7 +183,7 @@
 					</div>
 					<div class="modal-body">
 						<p>Esta seguro de que desea eliminar este registro?</p>
-						<p class="text-warning"><small>Esta acción no podra deshacerse.</small></p>
+						<p class="text-warning"><small>Esta acción no podrá deshacerse.</small></p>
 					</div>
 					<div class="modal-footer">
 						<input type="text" class="visually-hidden" name="user" id="userDelete">
