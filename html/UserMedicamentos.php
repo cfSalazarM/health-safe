@@ -58,8 +58,8 @@
 								<td><?php echo $mostrar['3']?></td>
 								<td><?php echo $mostrar['4']?></td>
 								<td class="tEdit">
-									<a href="#editUserModal" class="edit" data-bs-toggle="modal" data-bs-u="<?= $mostrar['0']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
-									<a href="#deleteUserModal" class="delete" data-bs-toggle="modal" data-bs-u="<?= $mostrar['0']?>"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
+									<a href="#editMedicineModal" class="edit" data-bs-toggle="modal" data-bs-code="<?= $mostrar['0']?>"><img src="../assets/icono-editar.svg" width="38" height="38" data-toggle="tooltip" title="Editar"></a>
+									<a href="#deleteMedicineModal" class="delete" data-bs-toggle="modal" data-bs-code="<?= $mostrar['0']?>"><img src="../assets/icono-eliminar.svg" width="38" height="38" data-toggle="tooltip" title="Eliminar"></a>
 								</td>		
 							</tr>
 							<?php
@@ -119,15 +119,15 @@
 <div id="editMedicineModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form class="needs-validation" id="form-editUser" method="post" action="../services/updateUser.php" enctype="multipart/form-data" novalidate>
+				<form class="needs-validation" id="form-editMedicine" method="post" action="../services/updateMedicine.php" enctype="multipart/form-data" novalidate>
 					<div class="modal-header">
 						<h4 class="modal-title">Editar Medicamento</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label>Nombre</label>
-							<input type="text" class="form-control" id="nomEdit" id="validationCustom01" name="nom" required>
+							<label>Código</label>
+							<input type="text" class="form-control" id="codeEdit" id="validationCustom01" name="code" required disabled>
 							<div class="valid-feedback">
 								El dato está correcto!
 							</div>
@@ -136,22 +136,27 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label>Nombre de usuario</label>
-							<input type="text" class="form-control" id="userEdit" name="user" required>
+							<label>Nombre</label>
+							<input type="text" class="form-control" id="nameEdit" name="name" required>
 						</div>
 						<div class="form-group">
-							<label>Telefono</label>
-							<input type="number" class="form-control" id="telEdit" name="tel" required>
+							<label>Presentación</label>
+							<input type="text" class="form-control" id="presentationEdit" name="presentation" required>
 						</div>
 						<div class="form-group">
-							<label>Contraseña</label>
-							<input type="text" class="form-control" id="passwordEdit" name="password" required>
+							<label>Fecha de caducidad</label>
+							<input type="date" class="form-control" id="dateEdit" name="due_date" required>
 						</div>
-						<input type="text" class="form-control visually-hidden" id="userOld" name="userOld" required>
+						<div class="form-group">
+							<label>Cantidad</label>
+							<input type="number" class="form-control" id="amountEdit" name="amount" required>
+						</div>
+						<input type="text" class="form-control visually-hidden" id="codeOld" name="codeOld" required>
+						<input type="number" class="form-control visually-hidden" id="amountOld" name="amountOld" required>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
-						<input type="submit" class="btn btn-success" id="bAddUser" value="Editar">
+						<input type="submit" class="btn btn-success" id="bAddMedicine" value="Editar">
 					</div>
 				</form>
 			</div>
@@ -168,7 +173,7 @@
 				</div>
 				<div class="modal-body">
 					<p>Esta seguro de que desea eliminar todos los registros?</p>
-					<p class="text-warning"><small>Esta acción no podra deshacerse.</small></p>
+					<p class="text-warning"><small>Esta acción no podrá deshacerse.</small></p>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
@@ -178,5 +183,27 @@
 		</div>
 	</div>
 </div>
+<div id="deleteMedicineModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action = "../services/deleteMedicine.php" method ="post">
+					<div class="modal-header">
+						<h4 class="modal-title">Eliminar Usuario</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
+					</div>
+					<div class="modal-body">
+						<p>Esta seguro de que desea eliminar este registro?</p>
+						<p class="text-warning"><small>Esta acción no podrá deshacerse.</small></p>
+					</div>
+					<div class="modal-footer">
+						<input type="text" class="visually-hidden" name="codeDelete" id="codeDelete">
+						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
+						<input type="submit" class="btn btn-danger" value="Eliminar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="../js/editDeleteMedicine.js"></script>
 </body>
 </html>
