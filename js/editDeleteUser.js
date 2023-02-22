@@ -1,4 +1,3 @@
-let user = document.getElementById('edit');
 let input = document.getElementById('userOld');
 
 let editModal = document.getElementById('editUserModal');

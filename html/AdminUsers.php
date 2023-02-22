@@ -126,6 +126,7 @@
 						<input type="submit" class="btn btn-success" id="bAddUser" value="Añadir">
 					</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>
