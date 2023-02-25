@@ -45,6 +45,10 @@
 					</thead>
 					<tbody id="tbody">
 					<?php
+							session_start();
+							$aux = $_SESSION['l_ok'];
+                      		$rol = $aux["rol"];
+							if (isset($_SESSION['l_ok']) and $rol == 'user') {
 							$conx = mysqli_connect("localhost", "root", "", "health_safe");
 
 							$sql = "SELECT code, medicine.name, presentation, due_date, amount FROM medicine";
@@ -205,5 +209,15 @@
 		</div>
 	</div>
 <script src="../js/editDeleteMedicine.js"></script>
+					<?php    
+                        }
+                        else {
+							if ($rol == 'admin') {
+								header ('Location: http://localhost/health_safe/html/ReporteMedicamentos.php');
+							} else {
+								header ('Location: http://localhost/health_safe/html/');
+							}
+						}      
+                    ?>    
 </body>
 </html>

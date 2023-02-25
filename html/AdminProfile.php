@@ -33,10 +33,11 @@
                     <?php
                       session_start();
                       $aux = $_SESSION['l_ok'];
+                      $rol = $aux["rol"];
+                      if (isset($_SESSION['l_ok']) and $rol == 'admin') {
                       $user = $aux["user"];
                       $password = $aux["password"];
-                      $rol = $aux["rol"];
-
+                      
                       $conx = mysqli_connect("localhost", "root", "", "health_safe");
 
                       $sql = "SELECT nom_usuario, user, phone, users.password FROM users WHERE users.user = '$user' AND users.password = '$password' and rol ='$rol'";
@@ -73,6 +74,18 @@
   <script src="../js/editAdmin.js"></script>
   <script src="../js/viewPassword.js"></script>
   <script src="../js/changeInput.js"></script>
+                    <?php    
+                        }
+                        else {
+                          if ($rol == 'user') {
+                              header ('Location: http://localhost/health_safe/html/UserProfile.php');
+                          } else {
+                              header ('Location: http://localhost/health_safe/html/');
+                          }
+                        }    
+                    ?>    
+                      
+                      
 </body>
 
 </html>

@@ -16,7 +16,13 @@
 </head>
 
 <body>
-	<script src="../js/mainAdmin.js"></script>
+	<?php
+		session_start();
+        $aux = $_SESSION['l_ok'];
+        $rol = $aux["rol"];
+		if(isset($_SESSION['l_ok']) and $rol == 'admin' ){
+		?>
+		<script src="../js/mainAdmin.js"></script>
 	<div class="container-xl d-flex justify-content-center mt-5 pt-5 align-items-center">
 		<div class="table-responsive w-75">
 			<div class="table-wrapper">
@@ -60,6 +66,17 @@
 			</div>
 		</div>
 	</div>
+		<?php    
+            }
+            else {
+				if ($rol == 'user') {
+					header ('Location: http://localhost/health_safe/html/UserMedicamentos.php');
+				} else {
+					header ('Location: http://localhost/health_safe/html/');
+				}
+			}       
+        ?>    
+	
 </body>
 
 </html>

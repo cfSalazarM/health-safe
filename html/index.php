@@ -17,6 +17,20 @@
 <body>
     <div class="container-fluid ps-md-0 mt-4">
         <div class="row g-0">
+            <?php
+                session_start();
+                if(isset($_SESSION['l_ok'])){
+                    $aux = $_SESSION['l_ok'];
+                    $rol = $aux["rol"];
+                    if ( $rol == 'admin') {
+                        header('Location: http://localhost/health_safe/html/AdminHome.php');
+                    }
+                    elseif ($rol == 'user') {
+                        header('Location: http://localhost/health_safe/html/UserHome.php');
+                    } 
+                }
+                else {
+                ?>
             <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image ms-5 ms-5"></div>
             <div class="col-md-8 col-lg-6">
                 <div class="login d-flex align-items-center py-5">
@@ -74,6 +88,10 @@
             </div>
         </div>
     </div>
+            
+            <?php
+                }
+            ?>
 </body>
 
 <div id="addUserModal" class="modal fade">

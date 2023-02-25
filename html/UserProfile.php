@@ -33,42 +33,53 @@
                     <?php
                       session_start();
                       $aux = $_SESSION['l_ok'];
-                      $user = $aux["user"];
-                      $password = $aux["password"];
                       $rol = $aux["rol"];
 
-                      $conx = mysqli_connect("localhost", "root", "", "health_safe");
+                      if (isset($_SESSION['l_ok']) and $rol == 'user') {
+                        $user = $aux["user"];
+                        $password = $aux["password"];
+                        $conx = mysqli_connect("localhost", "root", "", "health_safe");
 
-                      $sql = "SELECT nom_usuario, user, phone, users.password FROM users WHERE users.user = '$user' AND users.password = '$password' and rol ='$rol'";
-                      $res = mysqli_query($conx, $sql);
-                      
-                      while ($mostrar = mysqli_fetch_row($res)) {
+                        $sql = "SELECT nom_usuario, user, phone, users.password FROM users WHERE users.user = '$user' AND users.password = '$password' and rol ='$rol'";
+                        $res = mysqli_query($conx, $sql);
+                        
+                        while ($mostrar = mysqli_fetch_row($res)) {
                     ?>  
-                    <label class="form-label">Nombre y Apellido</label>                    
-                    <input type="text" class="form-control border border-primary" id="nameUser" value="<?php echo $mostrar['0']?>" name="name_user" disabled readonly>
-                    <label class="form-label">Nombre de usuario</label>
-                    <input type="text" class="form-control border border-primary" id="User" value="<?php echo $mostrar['1']?>" name="user" disabled readonly>
-                    <label class="form-label">Número telefónico</label>
-                    <input type="number" class="form-control border border-primary" id="CellUser" value="<?php echo $mostrar['2']?>" name="phone" disabled readonly>
-                    <label class="form-label">Contraseña</label>
-                    <div id="is-relative">
-                      <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
-                      <span id="icon"><i class="fa-solid fa-eye"></i></span>
+                      <label class="form-label">Nombre y Apellido</label>                    
+                      <input type="text" class="form-control border border-primary" id="nameUser" value="<?php echo $mostrar['0']?>" name="name_user" disabled readonly>
+                      <label class="form-label">Nombre de usuario</label>
+                      <input type="text" class="form-control border border-primary" id="User" value="<?php echo $mostrar['1']?>" name="user" disabled readonly>
+                      <label class="form-label">Número telefónico</label>
+                      <input type="number" class="form-control border border-primary" id="CellUser" value="<?php echo $mostrar['2']?>" name="phone" disabled readonly>
+                      <label class="form-label">Contraseña</label>
+                      <div id="is-relative">
+                        <input type="password" class="form-control border border-primary" id="password" value="<?php echo $mostrar['3']?>" name="password" disabled readonly>
+                        <span id="icon"><i class="fa-solid fa-eye"></i></span>
+                      </div>
+                      <br>
+                      <?php
+                        }
+                      ?>
                     </div>
-                    <br>
-                    <?php
-                      }
-                    ?>
-                  </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="../js/viewPassword.js"></script>
-</body>
+    <script src="../js/viewPassword.js"></script>
+                    <?php    
+                        }
+                        else {
+                          if ($rol == 'admin') {
+                              header ('Location: http://localhost/health_safe/html/AdminProfile.php');
+                          } else {
+                              header ('Location: http://localhost/health_safe/html/');
+                          }
+                        }    
+                    ?>
+  </body>
 
 </html>

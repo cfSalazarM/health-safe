@@ -16,7 +16,9 @@ document.write(
     '</div>' +
     '<div class="row align-items-center">' +
     '<div class="col">' +
-    '<a class="btn btn-primary" role="button" href="../html">Cerrar sesión</a>' +
+    '<form action="../services/close_session.php" method="GET">' +
+    '<button type="submit" class="btn btn-primary">Cerrar sesión</button>' +
+    '</form>' +
     '</div>' +
     '</div>' +
     '</div>' +

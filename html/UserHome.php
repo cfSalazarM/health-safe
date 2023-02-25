@@ -15,10 +15,27 @@
 </head>
 
 <body>
-    <script src="../js/mainUser.js"></script>
-    <div class="container d-flex justify-content-center">
-        <img src="../assets/logo.png" alt="">
-    </div>
+<?php
+        session_start();
+        $aux =$_SESSION['l_ok'];
+        $rol = $aux['rol'];
+        
+         if(isset($_SESSION['l_ok']) and $rol == 'user'){
+            ?>
+        <script src="../js/mainUser.js"></script>
+        <div class="container d-flex justify-content-center">
+            <img src="../assets/logo.png" alt="">
+        </div>
+        <?php    
+            }
+            else {
+                if ($rol == 'admin') {
+                    header ('Location: http://localhost/health_safe/html/AdminHome.php');
+                } else {
+                    header ('Location: http://localhost/health_safe/html/');
+                }
+            }    
+        ?>        
 
 </body>
 
