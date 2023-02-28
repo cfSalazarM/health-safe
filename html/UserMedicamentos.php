@@ -170,9 +170,9 @@
 <div id="deleteMedicinesModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form action="../services/deleteAllMedicine.php">
 				<div class="modal-header">
-					<h4 class="modal-title">Eliminar Usuarios</h4>
+					<h4 class="modal-title">Eliminar Medicamentos</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
 				</div>
 				<div class="modal-body">

@@ -34,6 +34,8 @@ editModal.addEventListener('shown.bs.modal', event => {
             inputPresentation.value = data[2];
             inputDate.value = data[3];
             inputAmount.value = data[4];
+            document.getElementById('amountOld').value = data[4];
+            console.log(document.getElementById('amountOld').value);
 
         }).catch(err => console.log(err))
 });

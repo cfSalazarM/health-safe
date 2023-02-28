@@ -3,7 +3,10 @@
     $presentation = $_POST['presentation'];
     $due_date = $_POST['due_date'];
     $amount = (int)$_POST['amount'];
+    $amountOld = (int)$_POST['amountOld'];
     $codeOld = $_POST['codeOld'];
+
+    $amount = $amount + $amountOld;
 
     $conx = mysqli_connect("localhost", "root", "", "health_safe");
         

@@ -179,7 +179,7 @@
 		<div id="deleteUsersModal" class="modal fade">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="../services/deleteUser.php" method="post">
+					<form action="../services/deleteAllUsers.php">
 						<div class="modal-header">
 							<h4 class="modal-title">Eliminar Usuarios</h4>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
