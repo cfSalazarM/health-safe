@@ -31,7 +31,7 @@
 								if (isset($_SESSION['msj'])) { 
 									$resp =$_SESSION['msj']; 
 									$type = $_SESSION['typeMsj']; 
-									$hresp = $_SESSION['hmsj'] ?>
+									$hresp = $_SESSION['hmsj']; ?>
 									<script>
 										Swal.fire(
 											'<?php echo $hresp ?>',
