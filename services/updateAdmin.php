@@ -14,8 +14,10 @@
     $res = mysqli_query($conx, $sql);
 
     if (!$res) {
-        
-        echo json_encode("No se actualizo");
+        $_SESSION['msj'] = "Admministrador no actualizado";
+        $_SESSION['typeMsj'] = "error";
+        $_SESSION['hmsj'] = "Error!";
+        header('Location: http://localhost/health_safe/html/AdminProfile.php');
     }
     else {
         $array = array(
@@ -24,6 +26,9 @@
             "rol" => $aux["rol"]
         );
         $_SESSION['l_ok'] = $array;
-        echo json_encode('Correcto');
+        $_SESSION['msj'] = "Administrador actualizado correctamente";
+        $_SESSION['typeMsj'] = "success";
+        $_SESSION['hmsj'] = "Buen trabajo!";
+        header('Location: http://localhost/health_safe/html/AdminProfile.php');
     }
 ?>

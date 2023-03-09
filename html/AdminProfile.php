@@ -13,6 +13,7 @@
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/a535fe116a.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -28,13 +29,29 @@
                 <h3 class="login-heading mb-4 ms-5">Mi perfil</h3>
 
                 <!-- Sign In Form -->
-                <form class="ms-5" id="form-profile">
+                <form class="ms-5" id="form-profile" method ="post" action = "../services/updateAdmin.php">
                   <div class="mb-3 w-100">
                     <?php
                       session_start();
                       $aux = $_SESSION['l_ok'];
                       $rol = $aux["rol"];
                       if (isset($_SESSION['l_ok']) and $rol == 'admin') {
+                        if (isset($_SESSION['msj'])) { 
+                          $resp =$_SESSION['msj']; 
+                          $type = $_SESSION['typeMsj']; 
+                          $hresp = $_SESSION['hmsj']; ?>
+                          <script>
+                            Swal.fire(
+                              '<?php echo $hresp ?>',
+                              '<?php echo $resp ?>',
+                              '<?php echo $type ?>'
+                            )
+                          </script>
+                        <?php
+                          unset($_SESSION['msj']);
+                          unset($_SESSION['typeMsj']);
+                          unset($_SESSION['hmsj']);		
+                        }
                       $user = $aux["user"];
                       $password = $aux["password"];
                       
@@ -71,7 +88,6 @@
       </div>
     </div>
   </div>
-  <script src="../js/editAdmin.js"></script>
   <script src="../js/viewPassword.js"></script>
   <script src="../js/changeInput.js"></script>
                     <?php    

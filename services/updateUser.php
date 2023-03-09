@@ -37,8 +37,9 @@
             $res = mysqli_query($conx, $sql);
         
             if (!$res) {
-                
-                echo json_encode("No se actualizo");
+                $_SESSION['msj'] = "Registro no Actualizado";
+                $_SESSION['typeMsj'] = "error";
+                $_SESSION['hmsj'] = "Error!"; 
             }
             else {
                 $_SESSION['msj'] = "Registro Actualizado";

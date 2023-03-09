@@ -13,6 +13,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>	
 </head>
 
 <body>
@@ -49,6 +50,23 @@
 							$aux = $_SESSION['l_ok'];
                       		$rol = $aux["rol"];
 							if (isset($_SESSION['l_ok']) and $rol == 'user') {
+								if (isset($_SESSION['msj'])) { 
+									$resp =$_SESSION['msj']; 
+									$type = $_SESSION['typeMsj']; 
+									$hresp = $_SESSION['hmsj']; ?>
+									<script>
+										Swal.fire(
+											'<?php echo $hresp ?>',
+											'<?php echo $resp ?>',
+											'<?php echo $type ?>'
+										)
+									</script>
+								<?php
+									unset($_SESSION['msj']);
+									unset($_SESSION['typeMsj']);
+									unset($_SESSION['hmsj']);		
+								}
+								
 							$conx = mysqli_connect("localhost", "root", "", "health_safe");
 
 							$sql = "SELECT code, medicine.name, presentation, due_date, amount FROM medicine";
@@ -192,7 +210,7 @@
 			<div class="modal-content">
 				<form action = "../services/deleteMedicine.php" method ="post">
 					<div class="modal-header">
-						<h4 class="modal-title">Eliminar Usuario</h4>
+						<h4 class="modal-title">Eliminar Medicamento</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
 					</div>
 					<div class="modal-body">

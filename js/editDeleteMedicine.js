@@ -4,6 +4,7 @@ let input = document.getElementById('codeOld');
 let editModal = document.getElementById('editMedicineModal');
 let deleteModal = document.getElementById('deleteMedicineModal');
 
+//obtine a los elementos html a través de el ID
 editModal.addEventListener('shown.bs.modal', event => {
     let but = event.relatedTarget;
     let codeOld = but.getAttribute('data-bs-code');
@@ -22,7 +23,7 @@ editModal.addEventListener('shown.bs.modal', event => {
         method: 'POST',
         body: formData
     })
-
+// carga los inputs con los datos de la base de datos
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -40,6 +41,7 @@ editModal.addEventListener('shown.bs.modal', event => {
         }).catch(err => console.log(err))
 });
 
+// elimimia el usuario seleccionado
 deleteModal.addEventListener('show.bs.modal', event => {
     let but = event.relatedTarget
     let code = but.getAttribute('data-bs-code');

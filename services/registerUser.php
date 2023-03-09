@@ -1,4 +1,5 @@
 <?php
+// cargar las variables con los datos
     $nombre = $_POST['nom'];
     $user = $_POST['user'];
     $pass = $_POST['password'];
@@ -7,7 +8,7 @@
 
     #Petición de conexión
     session_start();
-
+//verifica que lAS variables no esten vacías 
     if (empty($nombre) or empty($user) or empty($pass) or empty($telefono) or empty($rol)) {
         $_SESSION['msj'] = "Por favor, llena todos los campos!!";
         $_SESSION['typeMsj'] = "error";
@@ -20,11 +21,9 @@
 
         $queryRegistro = $conexion->query("SELECT COUNT(user) AS cantidad FROM users WHERE user ='$user'");
         $row = $queryRegistro->fetch_assoc();
-
-        
+       
 
         #Si la cantidad es mayor a 0 significa que ya hay un registro, por lo contrario, se inserta a la base de datos.
-
 
         if($row['cantidad'] >0) {
             $_SESSION['msj'] = "El usuario ingresado ya existe!!";
@@ -60,7 +59,7 @@
         
             //
         }
-        $conexion->close();
+        $conexion->close(); //cierr La conexion con la base de datos
     }
     
 ?>

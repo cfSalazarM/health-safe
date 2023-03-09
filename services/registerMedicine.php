@@ -11,11 +11,19 @@ $conx = mysqli_connect("localhost", "root", "", "health_safe");
 $sql = "insert into medicine values ('$code','$name','$presentation','$due_date','$amount')";
 $res = mysqli_query($conx, $sql);
 
+session_start();
 if (!$res) {
-    echo json_encode("No se hizo el registro");
+    $_SESSION['msj'] = "Medicamento no agregado!!";
+    $_SESSION['typeMsj'] = "error";
+    $_SESSION['hmsj'] = "Error";
+
+    header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
 }
 else {
-        echo json_encode('Correcto');
-        header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
+    $_SESSION['msj'] = "Medicamento agregado correctamente";
+    $_SESSION['typeMsj'] = "success";
+    $_SESSION['hmsj'] = "Buen trabajo!";
+
+    header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
 }
 ?>
