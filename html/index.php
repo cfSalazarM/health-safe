@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>	
 </head>
 
 <body>
@@ -22,6 +23,7 @@
                 if(isset($_SESSION['l_ok'])){
                     $aux = $_SESSION['l_ok'];
                     $rol = $aux["rol"];
+                    
                     if ( $rol == 'admin') {
                         header('Location: http://localhost/health_safe/html/AdminHome.php');
                     }
@@ -65,6 +67,22 @@
                                             id="bLog" type="submit">Iniciar sesión</button>
                                     </div>
                                     <?php
+                                        if (isset($_SESSION['msj'])) { 
+                                            $resp =$_SESSION['msj']; 
+                                            $type = $_SESSION['typeMsj']; 
+                                            $hresp = $_SESSION['hmsj']; ?>
+                                            <script>
+                                                Swal.fire(
+                                                    '<?php echo $hresp ?>',
+                                                    '<?php echo $resp ?>',
+                                                    '<?php echo $type ?>'
+                                                )
+                                            </script>
+                                        <?php
+                                            unset($_SESSION['msj']);
+                                            unset($_SESSION['typeMsj']);
+                                            unset($_SESSION['hmsj']);		
+                                        }
                                         $conx = mysqli_connect("localhost", "root", "", "health_safe");
                                         $sql = "SELECT rol FROM users WHERE rol ='admin'";
                                         $res = mysqli_query($conx, $sql);
