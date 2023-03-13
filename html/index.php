@@ -85,12 +85,6 @@
             </div>
         </div>
     </div>
-            
-            <?php
-                }
-            ?>
-</body>
-
 <div id="addUserModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -135,5 +129,9 @@
 		</div>
 	</div>
 </div>
-
+<script src="../js/cleanModalAdmin.js"></script>         
+            <?php
+                }
+            ?>   
+</body>
 </html>
