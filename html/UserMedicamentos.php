@@ -104,7 +104,7 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Código</label>
-						<input type="text" class="form-control" id="código" id="validationCustom01" name="code" required>
+						<input type="text" class="form-control" id="codigo" id="validationCustom01" name="code" required>
 						<div class="valid-feedback">
 							El dato está correcto!
 						</div>
@@ -227,6 +227,7 @@
 		</div>
 	</div>
 <script src="../js/editDeleteMedicine.js"></script>
+<script src="../js/cleanModalMedicine.js"></script>
 					<?php    
                         }
                         else {

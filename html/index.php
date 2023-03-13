@@ -63,9 +63,6 @@
                                     <div class="d-grid">
                                         <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
                                             id="bLog" type="submit">Iniciar sesión</button>
-                                        <div class="text-center">
-                                            <a class="small" href="#">Olvidaste tu contraseña?</a>
-                                        </div>
                                     </div>
                                     <?php
                                         $conx = mysqli_connect("localhost", "root", "", "health_safe");

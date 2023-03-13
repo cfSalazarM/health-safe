@@ -219,6 +219,7 @@
 			</div>
 		</div>
 		<script src="../js/editDeleteUser.js"></script>
+		<script src="../js/cleanModalUsers.js"></script>
 					<?php    
                         }
                         else {
