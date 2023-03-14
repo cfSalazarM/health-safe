@@ -3,6 +3,7 @@
     $conx = mysqli_connect("localhost","root","","health_safe");
     $sql ="DELETE FROM users where rol = 'user'";
     $res = mysqli_query($conx,$sql);
+    session_start();
     if (!$res) {
         $_SESSION['msj'] = "Usuarios no eliminados";
         $_SESSION['typeMsj'] = "error";
