@@ -106,7 +106,7 @@
 <div id="addUserModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form action="../services/registerUser.php" method="post" class="needs-validation" novalidate>
+			<form action="../services/registerAdmin.php" method="post" class="needs-validation" novalidate>
 				<div class="modal-header">
 					<h4 class="modal-title">Registrar Administrador</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>

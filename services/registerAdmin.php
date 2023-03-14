@@ -9,21 +9,14 @@
     #Petición de conexión
     session_start();
 //verifica que lAS variables no esten vacías 
-    if (empty($nombre) or empty($user) or empty($pass) or empty($telefono)) {
-        /*if ($rol = "admin") {
+    if (empty($nombre) or empty($user) or empty($pass) or empty($telefono) or empty($rol)) {
+        if ($rol = "admin") {
             $_SESSION['msj'] = "Por favor, llena todos los campos!!";
             $_SESSION['typeMsj'] = "error";
             $_SESSION['hmsj'] = "Error";
 
             header('Location: http://localhost/health_safe/html/index.php');
-        }else  {*/
-            $_SESSION['msj'] = "Por favor, llena todos los campos!!";
-            $_SESSION['typeMsj'] = "error";
-            $_SESSION['hmsj'] = "Error";
-
-            header('Location: http://localhost/health_safe/html/AdminUsers.php');
-        //}
-        
+        }
     }
     else {
         $conexion = new mysqli("localhost", "root", "", "health_safe") or die('could not connect to database');
@@ -38,7 +31,7 @@
             $_SESSION['msj'] = "El usuario ingresado ya existe!!";
             $_SESSION['typeMsj'] = "error";
             $_SESSION['hmsj'] = "Error";
-            header('Location: http://localhost/health_safe/html/AdminUsers.php');
+            header('Location: http://localhost/health_safe/html/index.php');
 
         }else{
             $conx = mysqli_connect("localhost", "root", "", "health_safe"); 
@@ -49,21 +42,16 @@
                 $_SESSION['msj'] = "No se guardó el registro!!";
                 $_SESSION['typeMsj'] = "error";
                 $_SESSION['hmsj'] = "Error";
-                header('Location: http://localhost/health_safe/html/AdminUsers.php');
+                header('Location: http://localhost/health_safe/html/index.php');
             }
             else {
-                
-                header('Location: http://localhost/health_safe/html/AdminUsers.php');
-                
                 $_SESSION['msj'] = "Registro exitoso";
                 $_SESSION['typeMsj'] = "success";
                 $_SESSION['hmsj'] = "Buen trabajo!";
-            }    
-
-        
-            //
+                header('Location: http://localhost/health_safe/html/index.php');
+            }
         }
-        $conexion->close(); //cierr La conexion con la base de datos
+        
+        $conexion->close();
     }
-    
-?>
+    ?>        
