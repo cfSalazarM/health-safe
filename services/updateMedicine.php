@@ -20,14 +20,12 @@
         $_SESSION['hmsj'] = "Error";
 
         header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
-    }
-    // validadción de fecha de medicamentos
-    if ($currentDate > $date) {
+    }elseif ($currentDate > $date) { // validadción de fecha de medicamentos
         $_SESSION['msj'] = "Fecha  no valida";
         $_SESSION['typeMsj'] = "error";
         $_SESSION['hmsj'] = "Error";
-    }  
-    else{
+        header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
+    }else{
         $conx = mysqli_connect("localhost", "root", "", "health_safe");
         
         $sql = "update medicine set name = '$name', presentation = '$presentation', due_date = '$due_date', amount = '$amount' where code like '$codeOld'";

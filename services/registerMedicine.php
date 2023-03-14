@@ -14,19 +14,19 @@ $date = strtotime($due_date);
 
 
 session_start();
-if (empty($nombre) or empty($user) or empty($pass) or empty($telefono) or empty($rol)) {
+if (empty($code) or empty($name) or empty($presentation) or empty($due_date) or empty($amount)) {
     $_SESSION['msj'] = "Por favor, llena todos los campos!!";
     $_SESSION['typeMsj'] = "error";
     $_SESSION['hmsj'] = "Error";
 
     header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
-} 
- // validadción de fecha de medicamentos
- if ($currentDate > $date) {
+}elseif ($currentDate > $date) {  // validadción de fecha de medicamentos
     $_SESSION['msj'] = "Fecha  no valida";
     $_SESSION['typeMsj'] = "error";
     $_SESSION['hmsj'] = "Error";
-}  else{
+
+    header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
+}else{
     $conx = mysqli_connect("localhost", "root", "", "health_safe"); 
     $sql = "insert into medicine values ('$code','$name','$presentation','$due_date','$amount')";
     $res = mysqli_query($conx, $sql);
@@ -37,12 +37,11 @@ if (empty($nombre) or empty($user) or empty($pass) or empty($telefono) or empty(
         $_SESSION['hmsj'] = "Error";
     
         header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
-    }
-    else {
+    }else {
         $_SESSION['msj'] = "Medicamento agregado correctamente";
         $_SESSION['typeMsj'] = "success";
         $_SESSION['hmsj'] = "Buen trabajo!";
-    
+        
         header('Location: http://localhost/health_safe/html/UserMedicamentos.php');
     
     }

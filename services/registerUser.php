@@ -10,13 +10,6 @@
     session_start();
 //verifica que lAS variables no esten vacías 
     if (empty($nombre) or empty($user) or empty($pass) or empty($telefono)) {
-        /*if ($rol = "admin") {
-            $_SESSION['msj'] = "Por favor, llena todos los campos!!";
-            $_SESSION['typeMsj'] = "error";
-            $_SESSION['hmsj'] = "Error";
-
-            header('Location: http://localhost/health_safe/html/index.php');
-        }else  {*/
             $_SESSION['msj'] = "Por favor, llena todos los campos!!";
             $_SESSION['typeMsj'] = "error";
             $_SESSION['hmsj'] = "Error";

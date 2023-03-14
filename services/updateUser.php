@@ -13,8 +13,7 @@
         $_SESSION['hmsj'] = "Error";
 
         header('Location: http://localhost/health_safe/html/AdminUsers.php');
-    }
-    else {
+    }else {
         $conexion = new mysqli("localhost", "root", "", "health_safe") or die('could not connect to database');
 
         $queryRegistro = $conexion->query("SELECT COUNT(user) AS cantidad FROM users WHERE user ='$user'");
