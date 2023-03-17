@@ -104,23 +104,23 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Código</label>
-						<input type="text" class="form-control" id="codigo" name="code" required>
+						<input type="text" class="form-control" id="codigo" name="code">
 					</div>
 					<div class="form-group">
 						<label>Nombre</label>
-						<input type="text" class="form-control" id="nombreMedicamento" name="name" required>
+						<input type="text" class="form-control" id="nombreMedicamento" name="name">
 					</div>
 					<div class="form-group">
 						<label>Presentación</label>
-						<input type="text" class="form-control" id="Presentación" name="presentation" required>
+						<input type="text" class="form-control" id="Presentación" name="presentation">
 					</div>
 					<div class="form-group">
 						<label>Fecha de Caducidad</label>
-						<input type="date" class="form-control" id="f-caducidad" name="due_date" required>
+						<input type="date" class="form-control" id="f-caducidad" name="due_date">
 					</div>
 					<div class="form-group">
 						<label>Cantidad</label>
-						<input type="number" class="form-control" id="Cantidad" name="amount" required>
+						<input type="number" class="form-control" id="Cantidad" name="amount">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -135,7 +135,7 @@
 <div id="editMedicineModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form class="needs-validation" id="form-editMedicine" method="post" action="../services/updateMedicine.php" enctype="multipart/form-data" novalidate>
+				<form id="form-editMedicine" method="post" action="../services/updateMedicine.php" novalidate>
 					<div class="modal-header">
 						<h4 class="modal-title">Editar Medicamento</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -143,26 +143,26 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Código</label>
-							<input type="text" class="form-control" id="codeEdit" name="code" required disabled>
+							<input type="text" class="form-control" id="codeEdit" name="code" disabled>
 						</div>
 						<div class="form-group">
 							<label>Nombre</label>
-							<input type="text" class="form-control" id="nameEdit" name="name" required>
+							<input type="text" class="form-control" id="nameEdit" name="name">
 						</div>
 						<div class="form-group">
 							<label>Presentación</label>
-							<input type="text" class="form-control" id="presentationEdit" name="presentation" required>
+							<input type="text" class="form-control" id="presentationEdit" name="presentation">
 						</div>
 						<div class="form-group">
 							<label>Fecha de caducidad</label>
-							<input type="date" class="form-control" id="dateEdit" name="due_date" required>
+							<input type="date" class="form-control" id="dateEdit" name="due_date">
 						</div>
 						<div class="form-group">
 							<label>Cantidad</label>
-							<input type="number" class="form-control" id="amountEdit" name="amount" required>
+							<input type="number" class="form-control" id="amountEdit" name="amount">
 						</div>
-						<input type="text" class="form-control visually-hidden" id="codeOld" name="codeOld" required>
-						<input type="number" class="form-control visually-hidden" id="amountOld" name="amountOld" required>
+						<input type="text" class="form-control visually-hidden" id="codeOld" name="codeOld">
+						<input type="number" class="form-control visually-hidden" id="amountOld" name="amountOld">
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">

@@ -94,7 +94,7 @@
 		<div id="addUserModal" class="modal fade">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form class="needs-validation" id="form-addUser" action="../services/registerUser.php" method="post" novalidate>
+					<form id="form-addUser" action="../services/registerUser.php" method="post" novalidate>
 						<div class="modal-header">
 							<h4 class="modal-title">Añadir Usuario</h4>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -102,19 +102,19 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" id="nom" name="nom" required>
+								<input type="text" class="form-control" id="nom" name="nom">
 							</div>
 							<div class="form-group">
 								<label>Nombre de usuario</label>
-								<input type="text" class="form-control" id="user" name="user" required>
+								<input type="text" class="form-control" id="user" name="user">
 							</div>
 							<div class="form-group">
 								<label>Teléfono</label>
-								<input type="number" class="form-control" id="tel" name="tel" required>
+								<input type="number" class="form-control" id="tel" name="tel">
 							</div>
 							<div class="form-group">
 								<label>Contraseña</label>
-								<input type="text" class="form-control" id="password" name="password" required>
+								<input type="text" class="form-control" id="password" name="password">
 							</div>
 							<input type="text" class="form-control visually-hidden" id="rol" name="rol" value="user">
 						</div>
@@ -131,7 +131,7 @@
 		<div id="editUserModal" class="modal fade">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form class="needs-validation" id="form-editUser" method="post" action="../services/updateUser.php" enctype="multipart/form-data" novalidate>
+					<form id="form-editUser" method="post" action="../services/updateUser.php" novalidate>
 						<div class="modal-header">
 							<h4 class="modal-title">Editar Usuario</h4>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
@@ -139,21 +139,22 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" id="nomEdit" name="nom" required>
+								<input type="text" class="form-control" id="nomEdit" name="nom">
 							</div>
 							<div class="form-group">
 								<label>Nombre de usuario</label>
-								<input type="text" class="form-control" id="userEdit" name="user" required>
+								<input type="text" class="form-control" id="userEdit" name="user"
+								>
 							</div>
 							<div class="form-group">
 								<label>Teléfono</label>
-								<input type="number" class="form-control" id="telEdit" name="tel" required>
+								<input type="number" class="form-control" id="telEdit" name="tel">
 							</div>
 							<div class="form-group">
 								<label>Contraseña</label>
-								<input type="text" class="form-control" id="passwordEdit" name="password" required>
+								<input type="text" class="form-control" id="passwordEdit" name="password">
 							</div>
-							<input type="text" class="form-control visually-hidden" id="userOld" name="userOld" required>
+							<input type="text" class="form-control visually-hidden" id="userOld" name="userOld">
 						</div>
 						<div class="modal-footer">
 							<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancelar">
