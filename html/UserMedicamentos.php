@@ -30,7 +30,7 @@
 							<button class="btn btn-success" data-bs-target="#addMedicineModal"
 								data-bs-toggle="modal"><span>Añadir Medicamentos</span></button>
 							<button data-bs-target="#deleteMedicinesModal" class="btn btn-danger"
-								data-bs-toggle="modal"><span>Eliminar</span></a>
+								data-bs-toggle="modal"><span>Eliminar Todo</span></a>
 						</div>
 					</div>
 				</div>
@@ -104,13 +104,7 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label>Código</label>
-						<input type="text" class="form-control" id="codigo" id="validationCustom01" name="code" required>
-						<div class="valid-feedback">
-							El dato está correcto!
-						</div>
-						<div class="invalid-feedback">
-							Por favor ingrese su nombre
-						</div>
+						<input type="text" class="form-control" id="codigo" name="code" required>
 					</div>
 					<div class="form-group">
 						<label>Nombre</label>
@@ -149,13 +143,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label>Código</label>
-							<input type="text" class="form-control" id="codeEdit" id="validationCustom01" name="code" required disabled>
-							<div class="valid-feedback">
-								El dato está correcto!
-							</div>
-							<div class="invalid-feedback">
-								Por favor ingrese su nombre
-							</div>
+							<input type="text" class="form-control" id="codeEdit" name="code" required disabled>
 						</div>
 						<div class="form-group">
 							<label>Nombre</label>

@@ -23,11 +23,8 @@ editModal.addEventListener('shown.bs.modal', event => {
 
     .then(res=>res.json())
     .then(data => {
-        console.log(data);
-        console.log(inputNom);
         document.getElementById('nomEdit').value = data[0];
         inputUser.value = data[1];
-        console.log(inputUser.value)
         inputTel.value = data[2];
         inputPass.value = data[3];
 

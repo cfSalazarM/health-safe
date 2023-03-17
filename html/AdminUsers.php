@@ -50,7 +50,7 @@
 								<button class="btn btn-success" data-bs-target="#addUserModal"
 									data-bs-toggle="modal" id="add"><span>Añadir Usuario</span></button>
 								<button data-bs-target="#deleteUsersModal" class="btn btn-danger"
-									data-bs-toggle="modal"><span>Eliminar</span></a>
+									data-bs-toggle="modal"><span>Eliminar Todo</span></a>
 							</div>
 						</div>
 					</div>
@@ -102,13 +102,7 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" id="nom" id="validationCustom01" name="nom" required>
-								<div class="valid-feedback">
-									El dato está correcto!
-								</div>
-								<div class="invalid-feedback">
-									Por favor ingrese su nombre
-								</div>
+								<input type="text" class="form-control" id="nom" name="nom" required>
 							</div>
 							<div class="form-group">
 								<label>Nombre de usuario</label>
@@ -145,13 +139,7 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Nombre</label>
-								<input type="text" class="form-control" id="nomEdit" id="validationCustom01" name="nom" required>
-								<div class="valid-feedback">
-									El dato está correcto!
-								</div>
-								<div class="invalid-feedback">
-									Por favor ingrese su nombre
-								</div>
+								<input type="text" class="form-control" id="nomEdit" name="nom" required>
 							</div>
 							<div class="form-group">
 								<label>Nombre de usuario</label>
